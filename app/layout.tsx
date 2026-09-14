@@ -6,7 +6,7 @@ import WalletStatusBadge from '@/components/WalletStatusBadge'
 import MobileNav from '@/components/MobileNav'
 
 export const metadata: Metadata = {
-  title: 'TxWatch — Soroban Contract Monitoring',
+  title: 'RWA Go — Soroban Contract Monitoring',
   description: 'Real-time monitoring and alerts for Soroban smart contracts',
 }
 
@@ -20,14 +20,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-xs font-black">
                 TX
               </span>
-              <span className="text-zinc-100">TxWatch</span>
+              <span className="text-zinc-100">RWA Go</span>
             </Link>
 
             <nav className="hidden sm:flex items-center gap-6 text-sm text-zinc-400">
               <Link href="/dashboard" className="hover:text-zinc-100 transition-colors">Dashboard</Link>
               <Link href="/contracts" className="hover:text-zinc-100 transition-colors">Contracts</Link>
               <a
-                href="https://github.com/Tx-wat"
+                href="https://github.com/RWA-go"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-zinc-100 transition-colors"

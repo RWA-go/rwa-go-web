@@ -1,10 +1,10 @@
-# stellar-txwatch-web
+# rwa-go-web
 
-Web dashboard for Stellar TxWatch - register contracts and manage real-time alert rules.
+Web dashboard for RWA Go - register contracts and manage real-time alert rules.
 
-Part of the [Tx-wat](https://github.com/Tx-wat) GitHub org.
+Part of the [RWA-go](https://github.com/RWA-go) GitHub org.
 
-[![CI](https://github.com/Tx-wat/stellar-txwatch-web/actions/workflows/ci.yml/badge.svg)](https://github.com/Tx-wat/stellar-txwatch-web/actions/workflows/ci.yml)
+[![CI](https://github.com/RWA-go/rwa-go-web/actions/workflows/ci.yml/badge.svg)](https://github.com/RWA-go/rwa-go-web/actions/workflows/ci.yml)
 
 ## What it does
 
@@ -26,8 +26,8 @@ Part of the [Tx-wat](https://github.com/Tx-wat) GitHub org.
 ## Getting started
 
 ```bash
-git clone https://github.com/Tx-wat/stellar-txwatch-web
-cd stellar-txwatch-web
+git clone https://github.com/RWA-go/rwa-go-web
+cd rwa-go-web
 npm install
 cp .env.example .env.local
 npm run dev
@@ -88,7 +88,7 @@ The dashboard follows a standard Next.js App Router structure:
 
 - **localStorage** (`lib/storage.ts`) — persists registered contracts and user preferences
 - **Freighter wallet** — stores user identity and network selection
-- **Backend API** (`lib/api.ts`) — optional txwatch-core integration for webhook delivery logs
+- **Backend API** (`lib/api.ts`) — optional rwa-call-core integration for webhook delivery logs
 
 ### Stellar integration boundaries
 
@@ -104,7 +104,7 @@ See [Stellar integration](#stellar-integration) for implementation details.
 
 | Variable | Description |
 |---|---|
-| `NEXT_PUBLIC_API_URL` | Base URL of the txwatch-core API (optional) |
+| `NEXT_PUBLIC_API_URL` | Base URL of the rwa-call-core API (optional) |
 
 ## Stellar integration
 
@@ -222,7 +222,7 @@ explorerContractUrl('mainnet', contractId) // https://stellar.expert/explorer/pu
 
 ### Extending alert rules
 
-Alert rules are defined in `types/index.ts` and must stay in sync with the Rust structs in [`stellar-txwatch-core`](https://github.com/Tx-wat/stellar-txwatch-core). To add a new rule type:
+Alert rules are defined in `types/index.ts` and must stay in sync with the Rust structs in [`rwa-call-core`](https://github.com/RWA-Call/rwa-call-core). To add a new rule type:
 
 1. Add the variant to `AlertRuleType` in `types/index.ts`
 2. Add a label and colour to `AlertRuleBadge.tsx`
@@ -281,8 +281,8 @@ See [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
 
 ## Sister repos
 
-- [stellar-txwatch-core](https://github.com/Tx-wat/stellar-txwatch-core) - Rust monitoring engine
-- [stellar-txwatch-contracts](https://github.com/Tx-wat/stellar-txwatch-contracts) - Soroban smart contracts
+- [rwa-call-core](https://github.com/RWA-Call/rwa-call-core) - Rust monitoring engine
+- [rwa-call-contracts](https://github.com/RWA-Call/rwa-call-contracts) - Soroban smart contracts
 
 ## Data Persistence
 
@@ -305,9 +305,9 @@ The dashboard currently operates in two modes:
 - No real-time monitoring occurs without a backend
 
 ### API Mode (When `NEXT_PUBLIC_API_URL` is set)
-- Contracts and rules sync with the txwatch-core backend
+- Contracts and rules sync with the rwa-call-core backend
 - Real webhook delivery and monitoring depend on the backend service
-- Requires the [stellar-txwatch-core](https://github.com/Tx-wat/stellar-txwatch-core) API running
+- Requires the [rwa-call-core](https://github.com/RWA-Call/rwa-call-core) API running
 
 **Note:** The dashboard itself does not monitor transactions. Monitoring is performed by the core engine. The dashboard is a configuration and monitoring UI only.
 

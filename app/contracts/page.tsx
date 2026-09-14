@@ -69,10 +69,10 @@ export default function ContractsPage() {
   // Check for a recently-created contract id in sessionStorage and highlight it once
   useEffect(() => {
     try {
-      const id = sessionStorage.getItem('txwatch_last_created_contract')
+      const id = sessionStorage.getItem('rwago_last_created_contract')
       if (id) {
         setHighlightedId(id)
-        sessionStorage.removeItem('txwatch_last_created_contract')
+        sessionStorage.removeItem('rwago_last_created_contract')
         const t = setTimeout(() => setHighlightedId(null), 6000)
         return () => clearTimeout(t)
       }

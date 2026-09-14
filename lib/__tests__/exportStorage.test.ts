@@ -15,7 +15,7 @@ const localStorageMock = (() => {
 })();
 Object.defineProperty(global, 'localStorage', { value: localStorageMock });
 
-const KEY = 'txwatch:contracts';
+const KEY = 'rwago:contracts';
 const sample = [
   { id: 'c1', address: 'GABC', label: 'Alpha', network: 'mainnet' },
   { id: 'c2', address: 'GDEF', label: 'Beta',  network: 'testnet' },

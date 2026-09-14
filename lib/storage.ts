@@ -1,8 +1,8 @@
 import { WatchedContract, AlertPayload, Network } from '@/types'
 
-const CONTRACTS_KEY = 'txwatch_contracts'
-const ALERTS_KEY = 'txwatch_alerts'
-const STORAGE_VERSION_KEY = 'txwatch_storage_version'
+const CONTRACTS_KEY = 'rwago_contracts'
+const ALERTS_KEY = 'rwago_alerts'
+const STORAGE_VERSION_KEY = 'rwago_storage_version'
 const CURRENT_STORAGE_VERSION = 1
 
 function getStorage(): Storage | undefined {

@@ -6,7 +6,7 @@ import Link from 'next/link'
 const links = [
   { href: '/dashboard', label: 'Dashboard' },
   { href: '/contracts', label: 'Contracts' },
-  { href: 'https://github.com/Tx-wat', label: 'GitHub', external: true },
+  { href: 'https://github.com/RWA-go', label: 'GitHub', external: true },
 ]
 
 export default function MobileNav() {

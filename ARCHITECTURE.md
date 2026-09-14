@@ -43,7 +43,7 @@ This document maps key files and directories to their functional areas, helping 
 
 | File | Responsibility |
 |---|---|
-| `types/index.ts` | Shared types — mirrors Rust structs from stellar-txwatch-core (Contract, AlertRule, WebhookLog, etc.) |
+| `types/index.ts` | Shared types — mirrors Rust structs from rwa-call-core (Contract, AlertRule, WebhookLog, etc.) |
 
 ### Root Configuration Files
 

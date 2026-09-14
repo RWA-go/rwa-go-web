@@ -123,7 +123,7 @@ export default function NewContractPage() {
     }
     saveContract(contract)
     try {
-      sessionStorage.setItem('txwatch_last_created_contract', contract.id)
+      sessionStorage.setItem('rwago_last_created_contract', contract.id)
     } catch {
       // ignore storage errors
     }

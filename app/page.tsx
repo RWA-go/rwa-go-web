@@ -109,26 +109,26 @@ export default function LandingPage() {
         <p className="text-zinc-500 text-sm">
           Open source - Part of the{' '}
           <a
-            href="https://github.com/Tx-wat"
+            href="https://github.com/RWA-go"
             target="_blank"
             rel="noopener noreferrer"
             className="text-indigo-400 hover:text-indigo-300 transition-colors"
           >
-            Tx-wat
+            RWA-go
           </a>{' '}
           GitHub org
         </p>
         <div className="flex items-center justify-center gap-4 text-xs text-zinc-600">
-          <a href="https://github.com/Tx-wat/stellar-txwatch-core" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">
-            txwatch-core
+          <a href="https://github.com/RWA-Call/rwa-call-core" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">
+            rwa-call-core
           </a>
           <span>|</span>
-          <a href="https://github.com/Tx-wat/stellar-txwatch-contracts" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">
-            txwatch-contracts
+          <a href="https://github.com/RWA-Call/rwa-call-contracts" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">
+            rwa-call-contracts
           </a>
           <span>|</span>
-          <a href="https://github.com/Tx-wat/stellar-txwatch-web" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">
-            txwatch-web
+          <a href="https://github.com/RWA-go/rwa-go-web" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">
+            rwa-go-web
           </a>
         </div>
       </section>

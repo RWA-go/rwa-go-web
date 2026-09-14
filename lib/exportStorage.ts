@@ -25,7 +25,7 @@ function readContractsFromStorage(storageKey: string): StoredContractExport[] {
 }
 
 export function buildContractSnapshot(
-  storageKey = 'txwatch:contracts',
+  storageKey = 'rwago:contracts',
 ): ContractExportSnapshot {
   const contracts = readContractsFromStorage(storageKey);
   return {

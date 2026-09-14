@@ -1,6 +1,6 @@
 # Terminology Glossary
 
-This glossary defines key terms used in the stellar-txwatch project to help new contributors understand the codebase and documentation.
+This glossary defines key terms used in the RWA Go project to help new contributors understand the codebase and documentation.
 
 ## Blockchain & Stellar
 
@@ -25,7 +25,7 @@ A test network for Stellar development and testing. Testnet uses test lumens (XL
 **Futurenet**
 An experimental Stellar network for testing new features and protocol changes before they reach Testnet or Mainnet.
 
-## TxWatch Concepts
+## RWA Go Concepts
 
 **Alert Rule**
 A condition that triggers a webhook notification when matched. Examples include large transfers, specific function calls, admin actions, or failed transactions.
@@ -37,7 +37,7 @@ An HTTP POST request sent to a registered URL when an alert rule fires. The webh
 The JSON data sent in a webhook POST request. Contains information like contract ID, rule type, transaction hash, function name, and timestamp.
 
 **Contract Registration**
-The process of adding a Soroban contract to TxWatch monitoring. Once registered, the contract's transactions are monitored for matching alert rules.
+The process of adding a Soroban contract to RWA Go monitoring. Once registered, the contract's transactions are monitored for matching alert rules.
 
 **Alert History**
 A log of all webhook deliveries and alert events for a registered contract. Shows which rules fired, when they fired, and delivery status.
@@ -48,10 +48,10 @@ A record of webhook POST attempts to the registered endpoint, including HTTP sta
 ## Development Terms
 
 **localStorage**
-Browser-based storage used by TxWatch to persist contract registrations and settings locally when no backend API is available.
+Browser-based storage used by RWA Go to persist contract registrations and settings locally when no backend API is available.
 
 **Freighter**
-A browser wallet extension for Stellar that enables users to sign transactions and connect to Stellar dApps. Required for contract registration in TxWatch.
+A browser wallet extension for Stellar that enables users to sign transactions and connect to Stellar dApps. Required for contract registration in RWA Go.
 
 **RPC (Remote Procedure Call)**
 A protocol for calling functions on a remote server. Soroban RPC is used to simulate contract invocations and read contract storage.
@@ -64,11 +64,11 @@ A unique identifier for a transaction on the Stellar network. Used to look up tr
 
 ## Related Projects
 
-**stellar-txwatch-core**
+**rwa-call-core**
 The Rust backend engine that monitors Stellar transactions and fires webhooks when alert rules match.
 
-**stellar-txwatch-contracts**
-Soroban smart contracts used for testing and demonstration purposes within the TxWatch ecosystem.
+**rwa-call-contracts**
+Soroban smart contracts used for testing and demonstration purposes within the RWA Go ecosystem.
 
-**stellar-txwatch-web**
+**rwa-go-web**
 This repository — the Next.js web dashboard for registering contracts and managing alert rules.

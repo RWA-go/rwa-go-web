@@ -3,12 +3,6 @@ import type { Network } from '@/types'
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? ''
 
-function getAuthHeaders(): Record<string, string> {
-  // Extension point for future authenticated requests
-  // Implement token/header logic here
-  return {}
-}
-
 export async function apiFetch<T>(
   path: string,
   options?: RequestInit
@@ -48,8 +42,8 @@ export async function sendTestWebhook(
   webhookUrl: string,
   contractId: string,
   network: Network = 'testnet',
-  timeoutMs = 10000
-): Promise<void> {
+  signal?: AbortSignal
+): Promise<{ status: number; ok: boolean }> {
   const payload = {
     label: 'Test Alert',
     contract_id: contractId,
@@ -62,7 +56,9 @@ export async function sendTestWebhook(
   }
 
   const controller = new AbortController()
-  const timeoutId = setTimeout(() => controller.abort(), timeoutMs)
+  const abortFromSignal = () => controller.abort()
+  signal?.addEventListener('abort', abortFromSignal)
+  const timeoutId = setTimeout(() => controller.abort(), 10000)
 
   try {
     const res = await fetch(webhookUrl, {
@@ -71,16 +67,9 @@ export async function sendTestWebhook(
       body: JSON.stringify(payload),
       signal: controller.signal,
     })
-    if (!res.ok) {
-      throw new Error(`Webhook returned ${res.status}`)
-    }
-  } catch (error) {
-    const err = error as { name?: string }
-    if (err?.name === 'AbortError') {
-      throw new Error('Webhook request timed out')
-    }
-    throw error
+    return { status: res.status, ok: res.ok }
   } finally {
     clearTimeout(timeoutId)
+    signal?.removeEventListener('abort', abortFromSignal)
   }
 }

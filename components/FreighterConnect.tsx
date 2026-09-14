@@ -4,11 +4,6 @@ import { useState, useEffect } from 'react'
 
 declare global {
   interface Window {
-    freighter?: {
-      isConnected: () => Promise<boolean>
-      getPublicKey: () => Promise<string>
-      getNetwork: () => Promise<string>
-    }
     __freighterPublicKey?: string | null
   }
 }
